@@ -1,44 +1,79 @@
-import { Button } from "@/components/ui/button";
-import NavbarItems from "@/constants";
 import { Link, useLocation } from "react-router-dom";
+import { MessageSquare, InfoIcon, PenSquare, LucideHome } from "lucide-react";
+import NavbarItems from "@/constants";
+import { cn } from "@/lib/utils";
 
 const Navbar = () => {
-    const location = useLocation(); // Get the current route path
+    const location = useLocation();
+
+    // Map menu items to icons
+    const handleIconChange = (title) => {
+        switch (title) {
+            case "Home":
+                return <LucideHome size={28} />;
+            case "Write":
+                return <PenSquare size={28} />;
+            case "Messages":
+                return <MessageSquare size={28} />;
+            case "About":
+                return <InfoIcon size={28} />;
+            default:
+                return null;
+        }
+    };
 
     return (
-        <div className="relative z-[1] flex items-center justify-between p-3 backdrop-blur-sm shadow-sm border-b border-white/20">
-            {/* Logo */}
-            <Link to="/">
-                <img
-                    src="/logotext2.svg"
-                    alt="TextToGodLogo"
-                    className="w-28"
-                />
-            </Link>
+        <>
+            {/* DESKTOP NAVBAR - Left Sidebar */}
+            <nav className="hidden md:flex md:fixed md:left-0 md:top-0 md:h-full md:w-20 flex-col items-center py-5">
+                {/* Logo */}
+                {/* <Link to="/" className="mb-10">
+                    <img
+                        src="/logotext2.svg"
+                        alt="TextToGodLogo"
+                        className="w-12"
+                    />
+                </Link> */}
 
-            {/* Menus */}
-            <div className="flex items-center justify-center gap-5">
-                {NavbarItems.map((item) => (
-                    <div key={item.id} className="text-base">
+                {/* Menu Items */}
+                <div className="flex flex-col gap-10 w-full my-auto">
+                    {NavbarItems.map((item) => (
                         <Link
+                            key={item.id}
                             to={item.link}
-                            className={`hover:text-[#003366] hover:font-bold ${
+                            className={cn(
+                                "flex flex-col items-center justify-center p-3 rounded-r-lg transition-all hover:text-[#003366]",
                                 location.pathname === item.link
-                                    ? "text-[#003366] font-bold"
+                                    ? "text-[#003366] bg-[#E4E7F0]/50 font-bold"
                                     : "text-gray-500"
-                            }`}
+                            )}
                         >
-                            {item.title}
+                            {handleIconChange(item.title)}
+                            <span className="text-sm">{item.title}</span>
                         </Link>
-                    </div>
-                ))}
-            </div>
+                    ))}
+                </div>
+            </nav>
 
-            {/* CTA */}
-            <Button className="flex items-center justify-center bg-[#003366] hover:text-[#003366] hover:bg-white hover:shadow-sm">
-                <Link to="/send-a-message">Write a Message</Link>
-            </Button>
-        </div>
+            {/* MOBILE NAVBAR - Bottom Navigation */}
+            <nav className="fixed bottom-0 left-0 w-full bg-white/30 backdrop-blur-md shadow-md border-t border-white/20 p-3 md:hidden flex justify-around items-center">
+                {NavbarItems.map((item) => (
+                    <Link
+                        key={item.id}
+                        to={item.link}
+                        className={cn(
+                            "flex flex-col items-center justify-center transition-all hover:text-[#003366]",
+                            location.pathname === item.link
+                                ? "text-[#003366] font-bold"
+                                : "text-gray-500"
+                        )}
+                    >
+                        {handleIconChange(item.title)}
+                        <span className="text-xs">{item.title}</span>
+                    </Link>
+                ))}
+            </nav>
+        </>
     );
 };
 

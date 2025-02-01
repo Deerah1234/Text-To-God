@@ -49,6 +49,10 @@
 
 body {
     min-height: 100vh;
+    background-color: #f4f4f4;
+    background-image: url(https://www.transparenttextures.com/pictures/noise.png);
+    background-repeat: repeat;
+    background-size: 300px 300px;
     /* background-color: gray; */
 }
 

@@ -3,19 +3,20 @@ import { useLocation } from "react-router-dom";
 
 const PageTitle = () => {
     const location = useLocation();
+    const websiteName = "Gratitute";
 
     useEffect(() => {
         const routeTitles = {
-            "/": "Talk To God - Home",
-            "/about": "Talk To God - About",
-            "/message-wall": "Talk To God - Message Wall",
-            "/send-a-message": "Talk To God - Send a Message to God",
+            "/": `${websiteName} - Home`,
+            "/about": `${websiteName} - About`,
+            "/message-wall": `${websiteName} - Message Wall`,
+            "/send-a-message": `${websiteName} - Send a Message to God`,
         };
 
-        document.title = routeTitles[location.pathname] || "Talk To God";
+        document.title = routeTitles[location.pathname] || websiteName;
     }, [location]);
 
-    return null; // This component doesn't render anything
+    return null;
 };
 
 export default PageTitle;

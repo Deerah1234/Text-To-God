@@ -6,13 +6,13 @@ const NavbarItems = [
     },
     {
         id: 2,
-        title: "About",
-        link: "/about",
+        title: "Write",
+        link: "/send-a-message",
     },
     {
         id: 3,
-        title: "Message Wall",
-        link: "/message-wall",
+        title: "About",
+        link: "/about",
     },
 ];
 
@@ -20,7 +20,7 @@ export const messages = [
     {
         id: 1,
         name: "Sillia March",
-        date: "January 27, 2025",
+        date: "13min",
         content: `Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet
                   dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper
                   suscipit lobortis nisl ut aliquip ex ea commodo consequat.`,
@@ -28,14 +28,28 @@ export const messages = [
     {
         id: 2,
         name: "John Doe",
-        date: "January 28, 2025",
+        date: "16h",
         content: `Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore
                   eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent.`,
     },
     {
         id: 3,
         name: "Jane Smith",
-        date: "February 1, 2025",
+        date: "1d",
+        content: `Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip
+                  ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie.`,
+    },
+    {
+        id: 4,
+        name: "James Smith",
+        date: "1d",
+        content: `Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip
+                  ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie.`,
+    },
+    {
+        id: 5,
+        name: "John Smith",
+        date: "2d",
         content: `Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip
                   ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie.`,
     },

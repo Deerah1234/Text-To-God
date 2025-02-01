@@ -1,9 +1,11 @@
-import { Hero } from "@/components";
+// import { Hero } from "@/components";
+import { MessageWall } from "..";
 
 const Home = () => {
     return (
         <div className="">
-            <Hero />
+            {/* <Hero /> */}
+            <MessageWall />
         </div>
     );
 };

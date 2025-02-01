@@ -1,24 +1,36 @@
 import { Outlet, useLocation } from "react-router-dom";
 import Header from "./common/Header";
-import { BgVideo, Footer, PageTitle } from ".";
+import { Footer, PageTitle, NavTitle } from ".";
 
 const Layout = () => {
     const location = useLocation();
-    const isHome = location.pathname === "/";
-    const isAbout = location.pathname === "/about";
+
+    const pageTitles = {
+        "/": "Home",
+        "/about": "About",
+        "/send-a-message": "Write a Message",
+    };
 
     return (
-        <div className="relative w-full min-h-screen">
+        <div className="relative w-full min-h-screen flex flex-col">
+            {/* Title Bar (Fixed on All Pages) */}
+            <NavTitle route={pageTitles[location.pathname] || "Page"} />
+
             <PageTitle />
-            {isHome && <BgVideo />}
+
+            {/* {location.pathname === "/" && <BgVideo />} */}
 
             <Header />
-            <main className="px-16 my-16 flex-grow">
+
+            {/* Page Content */}
+            <main className="mt-16 md:mt-20 min-[766px]:px-24 px-6 lg:px-[258px] py-10 flex-grow">
                 <Outlet />
             </main>
 
-            {isAbout && <Footer />}
+            {/* Footer only on the About Page */}
+            <Footer />
         </div>
     );
 };
+
 export default Layout;

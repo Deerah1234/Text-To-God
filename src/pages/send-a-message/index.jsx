@@ -1,6 +1,7 @@
 import { Heading } from "@/components";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import { LucideSend } from "lucide-react";
 
 const SendAMessage = () => {
     return (
@@ -13,12 +14,12 @@ const SendAMessage = () => {
             <form
                 action="#"
                 method="POST"
-                className="mx-auto mt-16 max-w-xl sm:mt-20 flex flex-col gap-5"
+                className="mx-auto max-w-xl sm:mt-20 md:mt-0 flex  flex-col gap-5"
             >
                 <div>
                     <label
                         htmlFor="name"
-                        className="block mb-2 font-medium text-gray-900 dark:text-white"
+                        className="block mb-2 font-medium text-[#003366] dark:text-white"
                     >
                         Name:{" "}
                     </label>
@@ -34,7 +35,7 @@ const SendAMessage = () => {
                 <div>
                     <label
                         htmlFor="email"
-                        className="block mb-2 font-medium text-gray-900 dark:text-white"
+                        className="block mb-2 font-medium text-[#003366] dark:text-white"
                     >
                         Email:{" "}
                     </label>
@@ -51,7 +52,7 @@ const SendAMessage = () => {
                 <div>
                     <label
                         htmlFor="message"
-                        className="block mb-2 font-medium text-gray-900 dark:text-white"
+                        className="block mb-2 font-medium text-[#003366] dark:text-white"
                     >
                         Your message
                     </label>
@@ -64,8 +65,9 @@ const SendAMessage = () => {
                 </div>
 
                 <div className="flex justify-end">
-                    <Button className="flex items-center justify-center bg-[#003366] hover:text-[#003366] hover:bg-white hover:border p-5 hover:shadow-sm">
+                    <Button className="flex items-center active:scale-50 justify-center bg-[#003366] hover:text-[#003366] hover:bg-white hover:border p-5 hover:shadow-sm">
                         Submit
+                        <LucideSend />
                     </Button>
                 </div>
             </form>
