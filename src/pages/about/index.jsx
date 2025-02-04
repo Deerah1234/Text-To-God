@@ -2,7 +2,7 @@ import { Heading } from "@/components";
 
 const About = () => {
     return (
-        <div>
+        <div className="px-3">
             <Heading
                 heading="About This Website"
                 subheading="A simple platform for anyone to connect with God, share their thoughts, and inspire others with faith."

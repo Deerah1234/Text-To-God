@@ -23,7 +23,7 @@ const Layout = () => {
             <Header />
 
             {/* Page Content */}
-            <main className="mt-16 md:mt-20 min-[766px]:px-24 px-6 lg:px-[258px] py-10 flex-grow">
+            <main className="mt-16 md:mt-20 min-[766px]:px-24 px-3 lg:px-[258px] py-10 flex-grow">
                 <Outlet />
             </main>
 

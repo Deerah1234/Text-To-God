@@ -5,7 +5,7 @@ import { LucideSend } from "lucide-react";
 
 const SendAMessage = () => {
     return (
-        <div className="max-w-2xl mx-auto px-4 py-10">
+        <div className="max-w-2xl mx-auto px-3 py-10">
             {/* Page Heading */}
             <Heading
                 heading="Write Your Message to God"

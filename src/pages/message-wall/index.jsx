@@ -27,7 +27,7 @@ const MessageWall = () => {
                 hidden: { opacity: 0 },
                 visible: { opacity: 1, transition: { staggerChildren: 0.2 } },
             }}
-            className="text-base max-w-3xl mx-auto p-4"
+            className="text-base max-w-3xl mx-auto"
         >
             {/* Heading */}
             <motion.h2
@@ -46,7 +46,7 @@ const MessageWall = () => {
             </motion.p>
 
             {/* Messages List */}
-            <motion.div className="flex flex-col border rounded-t-xl bg-white bg-white/30 backdrop-blur-md bg-gradient-to-r from-[#cce7ff] to-[#99cfff] mt-10">
+            <motion.div className="flex flex-col border rounded-t-xl bg-white bg-white/30 backdrop-blur-md mt-10">
                 {messages.map((message) => (
                     <motion.div
                         key={message.id}
@@ -69,21 +69,6 @@ const MessageWall = () => {
                                     {message.content}
                                 </p>
                             </CardContent>
-
-                            {/* Reaction Button */}
-                            <div className="flex items-center justify-between mt-4">
-                                <button
-                                    className="flex items-center text-lg text-pink-500 hover:text-pink-700 transition duration-200"
-                                    onClick={() =>
-                                        alert("Love reaction clicked!")
-                                    }
-                                >
-                                    <FaHeart className="mr-2 text-xl" />
-                                    <span className="text-sm text-gray-700">
-                                        120 Likes
-                                    </span>
-                                </button>
-                            </div>
                         </Card>
                     </motion.div>
                 ))}
