@@ -7,6 +7,7 @@ import {
     CardTitle,
 } from "@/components/ui/card";
 import { messages } from "@/constants";
+import { FaHeart } from "react-icons/fa"; // Importing the 'love' heart icon
 
 const fadeInUp = {
     hidden: { opacity: 0, y: 20 },
@@ -31,17 +32,17 @@ const MessageWall = () => {
             {/* Heading */}
             <motion.h2
                 variants={fadeInUp}
-                className="text-3xl text-[#002855] text-center font-bold tracking-wide"
+                className="text-2xl text-[#003366] mb-6 text-center font-nohemi font-semibold"
             >
                 Messages to God
             </motion.h2>
 
             <motion.p
                 variants={fadeInUp}
-                className="text-gray-700 text-center mt-3 text-lg"
+                className="text-gray-600 text-center mb-8"
             >
                 A collection of prayers, gratitude, and heartfelt thoughts
-                shared in faith.
+                shared by others in faith.
             </motion.p>
 
             {/* Messages List */}
@@ -68,6 +69,21 @@ const MessageWall = () => {
                                     {message.content}
                                 </p>
                             </CardContent>
+
+                            {/* Reaction Button */}
+                            <div className="flex items-center justify-between mt-4">
+                                <button
+                                    className="flex items-center text-lg text-pink-500 hover:text-pink-700 transition duration-200"
+                                    onClick={() =>
+                                        alert("Love reaction clicked!")
+                                    }
+                                >
+                                    <FaHeart className="mr-2 text-xl" />
+                                    <span className="text-sm text-gray-700">
+                                        120 Likes
+                                    </span>
+                                </button>
+                            </div>
                         </Card>
                     </motion.div>
                 ))}
