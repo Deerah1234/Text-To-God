@@ -1,11 +1,11 @@
-import { Analytics } from "@vercel/analytics/react";
-import { SpeedInsights } from "@vercel/speed-insights/next";
 import { useState } from "react";
-import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
+import { Analytics } from "@vercel/analytics/react";
+import { SpeedInsights } from "@vercel/speed-insights/react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { About, Home, MessageWall, SendAMessage } from "./pages";
 import { Layout, WelcomeScreen } from "./components";
 
-function App() {
+export default function App() {
     const [showMainApp, setShowMainApp] = useState(false);
 
     return (
@@ -35,5 +35,3 @@ function App() {
         </>
     );
 }
-
-export default App;
