@@ -4,9 +4,9 @@ import BackgroundVideo from "../assets/videos/heroVid.mp4";
 import { ArrowRight } from "lucide-react";
 
 const WelcomeScreen = ({ onFinish }) => {
-    const [count, setCount] = useState(4);
+    const [count, setCount] = useState(10); // Increased countdown to 10s
     const [showWelcome, setShowWelcome] = useState(
-        localStorage.getItem("visited") ? false : true
+        sessionStorage.getItem("visited") ? false : true
     );
 
     useEffect(() => {
@@ -15,7 +15,7 @@ const WelcomeScreen = ({ onFinish }) => {
             return;
         }
 
-        localStorage.setItem("visited", "true"); // Mark as visited
+        sessionStorage.setItem("visited", "true"); // Mark as visited for this session only
 
         const interval = setInterval(() => {
             setCount((prev) => (prev > 1 ? prev - 1 : 1));
@@ -24,7 +24,7 @@ const WelcomeScreen = ({ onFinish }) => {
         const timer = setTimeout(() => {
             clearInterval(interval);
             onFinish();
-        }, 25000);
+        }, 10000); // 10-second timeout
 
         return () => {
             clearInterval(interval);

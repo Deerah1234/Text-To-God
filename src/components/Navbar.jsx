@@ -56,7 +56,7 @@ const Navbar = () => {
             </nav>
 
             {/* MOBILE NAVBAR - Bottom Navigation */}
-            <nav className="fixed bottom-0 left-0 w-full bg-white/30 backdrop-blur-md shadow-md border-t border-white/20 p-3 md:hidden flex justify-around items-center">
+            <nav className="fixed bottom-0 left-0 z-10 w-full bg-white/30 backdrop-blur-md shadow-md border-t border-white/20 p-3 md:hidden flex justify-around items-center">
                 {NavbarItems.map((item) => (
                     <Link
                         key={item.id}
